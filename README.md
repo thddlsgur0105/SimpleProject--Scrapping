@@ -19,3 +19,9 @@
 3. user의 정보를 받아오는 함수(함수1)와 실제로 정보를 처리하는 함수(함수2)를 구분해서 작성하자
 
    > 함수1에서 user에게 정보를 잘 못 받아오면 함수1을 함수1의 내부에서 다시 요청함으로써 loop을 구성할 수 있기 때문
+
+4. 함수 내부에서 같은 함수를 호출해서 loop을 구성할 때에는 항상 return 시켜 주어야 한다.
+
+   > return 시키지 않으면, 함수의 종료 후에 (호출한 point 이후부터) 함수가 다시 수행되는데 이때 문제가 발생한다.
+
+   > 대표적으로는, UnboundLocalError: local variable referenced before assignment 가 있다.
